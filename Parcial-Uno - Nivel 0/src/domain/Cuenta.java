@@ -9,6 +9,21 @@ public class Cuenta {
         this.numeroCuenta = numeroCuenta;
         this.dniCliente = dniCliente;
         this.saldoActual = saldoActual;
-    }  
+    }
 
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public long getDniCliente() {
+        return dniCliente;
+    }
+
+    public double getSaldoActual() {
+        return saldoActual;
+    }
+
+    protected void setSaldoActual(double saldoActual) {
+        this.saldoActual = saldoActual;
+    }
 }
