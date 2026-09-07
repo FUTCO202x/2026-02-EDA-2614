@@ -23,7 +23,11 @@ public class Cuenta {
         return saldoActual;
     }
 
-    protected void setSaldoActual(double saldoActual) {
-        this.saldoActual = saldoActual;
+    public boolean retirar(double monto) {
+        // Validar que el monto sea positivo y que haya suficiente saldo
+    }
+
+    public boolean depositar(double monto) {
+        // Validar que el monto sea positivo
     }
 }
