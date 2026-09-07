@@ -12,33 +12,25 @@ public class ServiceCuenta implements IServiceCuenta {
     private final List<Cuenta> cuentas = new ArrayList<>();
 
     public ServiceCuenta() {
-        cuentas.add(new Ahorro("1001", 123, 1500.00,"2024-09-22"));
-        cuentas.add(new Corriente("1002", 124, 2000.00,0.3));
-        cuentas.add(new Corriente("1003", 125, 500.00,0.5));
-        cuentas.add(new Corriente("1004", 126, 750.00,0.7));
-        cuentas.add(new Ahorro("1005", 127, 3000.00,"2024-10-22"));
-        cuentas.add(new Ahorro("1005", 127, 3000.00,"2024-10-22"));
-        cuentas.add(new Ahorro("1005", 127, 3000.00,"2024-10-22"));
-        cuentas.add(new Ahorro("1006", 128, 1200.00,"2023-12-02"));
-        cuentas.add(new Ahorro("1007", 129, 1800.00,"2023-12-00"));
-        cuentas.add(new Ahorro("1008", 130, 950.00,"2024-2009"));
-        cuentas.add(new Ahorro("1009", 131, 4000.00,"2024-12-22"));
-        cuentas.add(new Corriente("1010", 132, 600.00,0.4));
-        cuentas.add(new Corriente("1011", 133, 2200.00,0.5));
-        cuentas.add(new Corriente("1012", 134, 3300.00,0.5));
-        cuentas.add(new Corriente("1013", 135, 1100.00,0.5));
-        cuentas.add(new Corriente("1014", 136, 2700.00,0.3));
-        cuentas.add(new Ahorro("1015", 137, 800.00,"2025-05-05"));
-        cuentas.add(new Corriente("1016", 138, 1600.00,03));
-        cuentas.add(new Corriente("1017", 139, 2500.00,0.3));
-        cuentas.add(new Ahorro("1018", 140, 1000.00,"2024-11-05"));
-        cuentas.add(new Ahorro("1019", 141, 1900.00,"2025-01-10"));
-        cuentas.add(new Corriente("1020", 142, 2900.00,0.3));
+        cuentas.add(new Ahorro("530012345601", 1002345678, 2_450_000.00, "2023-03-14"));
+        cuentas.add(new Ahorro("530012345602", 1002345911, 875_300.50, "2024-07-02"));
+        cuentas.add(new Ahorro("530012345603", 1003456789, 12_300_000.00, "2022-11-30"));
+        cuentas.add(new Ahorro("530012345604", 1004567890, 150_000.00, "2025-01-08"));
+        cuentas.add(new Ahorro("530012345605", 1005678901, 5_620_750.25, "2021-06-19"));
+        cuentas.add(new Ahorro("530012345606", 1006789012, 980_000.00, "2024-09-27"));
+        cuentas.add(new Ahorro("530012345607", 1007890123, 3_100_000.00, "2023-12-05"));
+        cuentas.add(new Ahorro("530012345608", 1008901234, 45_000.00, "2025-04-11"));
+
+        cuentas.add(new Corriente("770098765401", 1009012345, 8_750_000.00, 0.004));
+        cuentas.add(new Corriente("770098765402", 1010123456, 1_230_500.00, 0.004));
+        cuentas.add(new Corriente("770098765403", 1011234567, 22_400_000.00, 0.004));
+        cuentas.add(new Corriente("770098765404", 1012345678, 690_000.00, 0.004));
+        cuentas.add(new Corriente("770098765405", 1013456789, 3_580_000.00, 0.004));
+        cuentas.add(new Corriente("770098765406", 1014567890, 15_900_000.00, 0.004));
+        cuentas.add(new Corriente("770098765407", 1015678901, 260_000.00, 0.004));
+        cuentas.add(new Corriente("770098765408", 1016789012, 9_050_000.00, 0.004));
     }
 
-    @Override
-    public List<Cuenta> obtenerCuentas() {
-        return cuentas;
-    }
+    //Implementación de los métodos
 
 }
