@@ -1,22 +1,19 @@
-package service;
-
 import java.util.List;
 
-import domain.Cuenta;
-
 public interface IServiceCuenta {
-    List<Cuenta> obtenerCuentas();
 
-    // Devuelve null si no existe ninguna cuenta con ese número
-    Cuenta obtenernumeroCuenta(String numeroCuenta);
+    List<Ahorro> listarAhorros();
 
-    // true si se creó, false si ya existía una cuenta con ese número
-    boolean crearCuenta(Cuenta cuenta);
+    List<Corriente> listarCorrientes();
 
-    // true si el retiro fue exitoso, false si la cuenta no existe
-    // o si el saldo es insuficiente
-    boolean retirarDinero(String numeroCuenta, double retiro);
+    void crearAhorro(Ahorro ahorro);
 
-    // true si el depósito fue exitoso, false si la cuenta no existe
-    boolean ingresarDinero(String numeroCuenta, double ingreso);
+    void crearCorriente(Corriente corriente);
+
+    Cuenta obtenerCuenta(String numeroCuenta);
+
+    boolean retirarDinero(String numeroCuenta, double monto);
+
+    boolean depositarDinero(String numeroCuenta, double monto);
 }
+

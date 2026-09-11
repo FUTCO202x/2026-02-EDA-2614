@@ -1,0 +1,6 @@
+/**
+ * Ahorro
+ */
+public class Ahorro {
+
+}

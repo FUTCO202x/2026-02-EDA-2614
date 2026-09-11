@@ -1,0 +1,6 @@
+/**
+ * Corriente
+ */
+public class Corriente {
+
+}

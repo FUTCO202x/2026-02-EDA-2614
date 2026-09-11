@@ -1,0 +1,6 @@
+/**
+ * IServiceCuenta
+ */
+public class IServiceCuenta {
+
+}
