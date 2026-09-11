@@ -9,5 +9,20 @@ public class Ahorro extends Cuenta{
         this.fechaCreacion = fechaCreacion;
     }
 
+    public Ahorro() {
+    }
+
+    public String getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(String fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
     
+    public String toString() {
+        return "Ahorro [numeroCuenta=" + getNumeroCuenta() + ", dniCliente=" + getDniCliente()
+                + ", saldoActual=" + getSaldoActual() + ", fechaCreacion=" + fechaCreacion + "]";
+    }
 }
