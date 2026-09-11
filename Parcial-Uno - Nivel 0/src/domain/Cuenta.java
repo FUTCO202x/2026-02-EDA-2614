@@ -1,6 +1,7 @@
 package domain;
 
 public class Cuenta {
+
     private String numeroCuenta;
     private long dniCliente;
     private double saldoActual;
@@ -25,9 +26,19 @@ public class Cuenta {
 
     public boolean retirar(double monto) {
         // Validar que el monto sea positivo y que haya suficiente saldo
+        if (monto > 0 && monto <= saldoActual) {
+            saldoActual -= monto;
+            return true;
+        }
+        return false;
     }
 
     public boolean depositar(double monto) {
         // Validar que el monto sea positivo
+        if (monto > 0) {
+            saldoActual += monto;
+            return true;
+        }
+        return false;
     }
 }
