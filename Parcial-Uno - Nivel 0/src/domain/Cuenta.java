@@ -12,16 +12,150 @@ public class Cuenta {
     }
 
     public String getNumeroCuenta() {
-        return numeroCuenta;
-    }
+        return numeroCuenta;}
+        public void setNumeroCuenta(String numeroCuenta) { this.numeroCuenta = numeroCuenta; }
+
+
+    
 
     public long getDniCliente() {
-        return dniCliente;
-    }
+        return dniCliente;}
+        public void setDniCliente(long dniCliente) { this.dniCliente = dniCliente; }
+
+
+    
 
     public double getSaldoActual() {
-        return saldoActual;
+        return saldoActual;}
+        public void setSaldoActual(double saldoActual) { this.saldoActual = saldoActual; }
     }
+
+
+    
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public boolean retirar(double monto) {
         // Validar que el monto sea positivo y que haya suficiente saldo

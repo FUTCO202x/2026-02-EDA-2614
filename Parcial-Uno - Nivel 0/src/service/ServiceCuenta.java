@@ -30,7 +30,25 @@ public class ServiceCuenta implements IServiceCuenta {
         cuentas.add(new Corriente("770098765407", 1015678901, 260_000.00, 0.004));
         cuentas.add(new Corriente("770098765408", 1016789012, 9_050_000.00, 0.004));
     }
+    public List<Cuenta> listarCuentas() {
+        return cuentas;
+    }
 
-    //Implementación de los métodos
+    
+    public Cuenta obtenerCuenta(String numeroCuenta) {
+        for (Cuenta c : cuentas) {
+            if (c.getNumeroCuenta().equals(numeroCuenta)) {
+                return c;
+            }
+        }
+        return null;
+    }
 
+    
+    public void crearCuenta(Cuenta cuenta) {
+        cuentas.add(cuenta);
+    }
+
+
+    
 }
