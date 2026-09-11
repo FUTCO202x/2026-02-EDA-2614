@@ -5,6 +5,9 @@ public class Cuenta {
     private long dniCliente;
     private double saldoActual;
 
+    public Cuenta() {
+    }
+
     public Cuenta(String numeroCuenta, long dniCliente, double saldoActual) {
         this.numeroCuenta = numeroCuenta;
         this.dniCliente = dniCliente;
@@ -24,10 +27,18 @@ public class Cuenta {
     }
 
     public boolean retirar(double monto) {
-        // Validar que el monto sea positivo y que haya suficiente saldo
+        if (monto <= 0 || monto > saldoActual) {
+            return false;
+        }
+        saldoActual -= monto;
+        return true;
     }
 
     public boolean depositar(double monto) {
-        // Validar que el monto sea positivo
+        if (monto <= 0) {
+            return false;
+        }
+        saldoActual += monto;
+        return true;
     }
 }
