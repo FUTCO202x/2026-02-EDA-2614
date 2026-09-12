@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Parcial-Uno-Nivel-0" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Parcial-Uno-Nivel-0.</description>
+    <import file="nbproject/build-impl.xml"/>
+</project>

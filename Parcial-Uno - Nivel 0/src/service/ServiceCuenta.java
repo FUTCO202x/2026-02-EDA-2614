@@ -20,6 +20,11 @@ public class ServiceCuenta implements IServiceCuenta {
         cuentas.add(new Ahorro("530012345606", 1006789012, 980_000.00, "2024-09-27"));
         cuentas.add(new Ahorro("530012345607", 1007890123, 3_100_000.00, "2023-12-05"));
         cuentas.add(new Ahorro("530012345608", 1008901234, 45_000.00, "2025-04-11"));
+        cuentas.add(new Ahorro("530012345609", 1009012345, 2_200_000.00, "2020-02-29"));
+        cuentas.add(new Ahorro("530012345610", 1010123456, 750_000.00, "2025-12-01"));
+        cuentas.add(new Ahorro("530012345611", 1011234567, 18_450_000.75, "2019-08-15"));
+        cuentas.add(new Ahorro("530012345612", 1012345678, 320_500.00, "2026-05-20"));
+        cuentas.add(new Ahorro("530012345613", 1013456789, 5_000.00, "2026-09-01"));
 
         cuentas.add(new Corriente("770098765401", 1009012345, 8_750_000.00, 0.004));
         cuentas.add(new Corriente("770098765402", 1010123456, 1_230_500.00, 0.004));
@@ -29,8 +34,73 @@ public class ServiceCuenta implements IServiceCuenta {
         cuentas.add(new Corriente("770098765406", 1014567890, 15_900_000.00, 0.004));
         cuentas.add(new Corriente("770098765407", 1015678901, 260_000.00, 0.004));
         cuentas.add(new Corriente("770098765408", 1016789012, 9_050_000.00, 0.004));
+        cuentas.add(new Corriente("770098765409", 1017890123, 1_150_000.00, 0.005));
+        cuentas.add(new Corriente("770098765410", 1018901234, 450_000.00, 0.005));
+        cuentas.add(new Corriente("770098765411", 1019012345, 27_800_000.00, 0.003));
+        cuentas.add(new Corriente("770098765412", 1020123456, 900.00, 0.006));
+        cuentas.add(new Corriente("770098765413", 1021234567, 13_500_000.50, 0.004));
     }
 
     //Implementación de los métodos
+    @Override
+    public List<Cuenta> obtenerCuentas() {
+        return cuentas;
+    }
+
+    @Override
+    public Cuenta obtenernumeroCuenta(String numeroCuenta) {
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta.getNumeroCuenta().equals(numeroCuenta)) {
+                return cuenta;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean crearCuenta(Cuenta cuenta) {
+        if (obtenernumeroCuenta(cuenta.getNumeroCuenta()) != null) {
+            return false;
+        }
+        return cuentas.add(cuenta);
+    }
+
+    @Override
+    public boolean retirarDinero(String numeroCuenta, double retiro) {
+        Cuenta cuenta = obtenernumeroCuenta(numeroCuenta);
+        if (cuenta == null) {
+            return false;
+        }
+        return cuenta.retirar(retiro);
+    }
+
+    @Override
+    public boolean ingresarDinero(String numeroCuenta, double ingreso) {
+        Cuenta cuenta = obtenernumeroCuenta(numeroCuenta);
+        if (cuenta == null) {
+            return false;
+        }
+        return cuenta.depositar(ingreso);
+    }
+
+    public List<Ahorro> obtenerCuentasAhorro() {
+        List<Ahorro> ahorros = new ArrayList<>();
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta instanceof Ahorro) {
+                ahorros.add((Ahorro) cuenta);
+            }
+        }
+        return ahorros;
+    }
+
+    public List<Corriente> obtenerCuentasCorriente() {
+        List<Corriente> corrientes = new ArrayList<>();
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta instanceof Corriente) {
+                corrientes.add((Corriente) cuenta);
+            }
+        }
+        return corrientes;
+    }
 
 }
