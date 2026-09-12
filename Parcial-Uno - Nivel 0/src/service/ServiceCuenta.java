@@ -32,5 +32,65 @@ public class ServiceCuenta implements IServiceCuenta {
     }
 
     //Implementación de los métodos
+    @Override
+    public List<Cuenta> obtenerCuentas() {
+        return cuentas;
+    }
+
+    @Override
+    public Cuenta obtenernumeroCuenta(String numeroCuenta) {
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta.getNumeroCuenta().equals(numeroCuenta)) {
+                return cuenta;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean crearCuenta(Cuenta cuenta) {
+        if (obtenernumeroCuenta(cuenta.getNumeroCuenta()) != null) {
+            return false;
+        }
+        return cuentas.add(cuenta);
+    }
+
+    @Override
+    public boolean retirarDinero(String numeroCuenta, double retiro) {
+        Cuenta cuenta = obtenernumeroCuenta(numeroCuenta);
+        if (cuenta == null) {
+            return false;
+        }
+        return cuenta.retirar(retiro);
+    }
+
+    @Override
+    public boolean ingresarDinero(String numeroCuenta, double ingreso) {
+        Cuenta cuenta = obtenernumeroCuenta(numeroCuenta);
+        if (cuenta == null) {
+            return false;
+        }
+        return cuenta.depositar(ingreso);
+    }
+
+    public List<Ahorro> obtenerCuentasAhorro() {
+        List<Ahorro> ahorros = new ArrayList<>();
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta instanceof Ahorro) {
+                ahorros.add((Ahorro) cuenta);
+            }
+        }
+        return ahorros;
+    }
+
+    public List<Corriente> obtenerCuentasCorriente() {
+        List<Corriente> corrientes = new ArrayList<>();
+        for (Cuenta cuenta : cuentas) {
+            if (cuenta instanceof Corriente) {
+                corrientes.add((Corriente) cuenta);
+            }
+        }
+        return corrientes;
+    }
 
 }
