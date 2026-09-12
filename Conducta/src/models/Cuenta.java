@@ -1,18 +1,18 @@
 package models;
 
 public class Cuenta {
+
     private String numeroCuenta;
     private long dniCliente;
-    private double saldoCuenta;
+    private double saldoActual;
 
-    public Cuenta(String numeroCuenta, long dniCliente, double saldoCuenta) {
+    public Cuenta(String numeroCuenta, long dniCliente, double saldoActual) {
         this.numeroCuenta = numeroCuenta;
         this.dniCliente = dniCliente;
-        this.saldoCuenta = saldoCuenta;
+        this.saldoActual = saldoActual;
     }
 
     public Cuenta() {
-
     }
 
     public long getDniCliente() {
@@ -23,12 +23,12 @@ public class Cuenta {
         this.dniCliente = dniCliente;
     }
 
-    public double getSaldoCuenta() {
-        return saldoCuenta;
+    public double getSaldoActual() {
+        return saldoActual;
     }
 
-    public void setSaldoCuenta(double saldoCuenta) {
-        this.saldoCuenta = saldoCuenta;
+    public void setSaldoActual(double saldoActual) {
+        this.saldoActual = saldoActual;
     }
 
     public void setNumeroCuenta(String numeroCuenta) {
@@ -38,5 +38,4 @@ public class Cuenta {
     public String getNumeroCuenta() {
         return this.numeroCuenta;
     }
-
 }
