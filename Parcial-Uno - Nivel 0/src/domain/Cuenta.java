@@ -5,6 +5,9 @@ public class Cuenta {
     private long dniCliente;
     private double saldoActual;
 
+    public Cuenta() {
+    }
+
     public Cuenta(String numeroCuenta, long dniCliente, double saldoActual) {
         this.numeroCuenta = numeroCuenta;
         this.dniCliente = dniCliente;
@@ -19,15 +22,41 @@ public class Cuenta {
         return dniCliente;
     }
 
+    public void setDniCliente(long dniCliente) {
+        this.dniCliente = dniCliente;
+    }
+
     public double getSaldoActual() {
         return saldoActual;
     }
 
+    public void setSaldoActual(double saldoActual) {
+        this.saldoActual = saldoActual;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
     public boolean retirar(double monto) {
-        // Validar que el monto sea positivo y que haya suficiente saldo
+        if (!Double.isFinite(monto) || monto <= 0 || monto > saldoActual) {
+            return false;
+        }
+        saldoActual -= monto;
+        return true;
     }
 
     public boolean depositar(double monto) {
-        // Validar que el monto sea positivo
+        if (!Double.isFinite(monto) || monto <= 0 || !Double.isFinite(saldoActual + monto)) {
+            return false;
+        }
+        saldoActual += monto;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta{numeroCuenta='" + numeroCuenta + "', dniCliente=" + dniCliente
+                + ", saldoActual=" + saldoActual + "}";
     }
 }
